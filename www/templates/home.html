@@ -1,0 +1,137 @@
+
+<ion-view>
+  <form>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="搜索商品">
+        <input type="submit" ng-click="searchItem(searchQuery)"
+               style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+      </label>
+      <span class="cart-num">{{ngCart.getTotalItems()}}</span>
+      <a href="#/shoppingCart" class="button button-icon icon ion-ios-cart"></a>
+    </div>
+  </form>
+    <ion-content class="has-header homepage" overflow-scroll="false">
+    <ion-slide-box ng-if="banners" delegate-handle="image-viewer" auto-play="true" slide-interval="2000" does-continue="true"
+      >
+      <ion-slide ng-repeat="item in banners track by $index">
+        <img ng-src="{{item.banner}}">
+      </ion-slide>
+
+    </ion-slide-box>
+
+    <div class="row intro-box">
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon category"></i>
+          <p>商品分类</p>
+        </a>
+
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon calculate"></i>
+
+          <p>商品分类</p>
+        </a>
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon send"></i>
+
+          <p>商品分类</p>
+        </a>
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon limit"></i>
+
+          <p>商品分类</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="row intro-box">
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon category"></i>
+
+          <p>商品分类</p>
+        </a>
+
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon calculate"></i>
+
+          <p>商品分类</p>
+        </a>
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon send"></i>
+
+          <p>商品分类</p>
+        </a>
+
+      </div>
+      <div class="col col-25">
+        <a href="#/categories">
+          <i class="icon limit"></i>
+
+          <p>商品分类</p>
+        </a>
+      </div>
+
+    </div>
+
+
+    <ion-item class="item" style="border-left: 3px solid #ea004f;">
+      随机精选
+    </ion-item>
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()"
+      pulling-icon="ion-android-arrow-down"
+      spinner="spiral">
+    </ion-refresher>
+
+    <div class="animated fadeIn" lazy-scroll>
+      <div class="row row-wrap">
+        <div class="col col-50 " ng-repeat="item in items"
+             style="display: inline-block"
+             ng-click="goItem(item.pid)"
+          >
+          <div class="item item-image">
+            <img image-lazy-src="{{item.pic}}"
+                 image-lazy-loader="dots" image-lazy-distance-from-bottom-to-load="100"
+              >
+          </div>
+          <div class="item item-text-wrap" href="#">
+            <h2 class="product-title" style="overflow: hidden;">{{item.pname}}</h2>
+            <p class="product-prices">
+              <span class="curr-price">{{item.origprice|currency : '￥'}}</span>
+              <del class="orig-price">{{item.currprice | currency : '￥'}}</del>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <div class="center-ico" ng-if="!moreDataCanBeLoaded()">
+        <i class="icon ion-ios-grid-view-outline"></i>
+        <h1>==到底了==</h1>
+      </div>
+    <ion-infinite-scroll
+      on-infinite="loadMore()"
+      distance="1"
+      spinner='spiral'
+      ng-if="moreDataCanBeLoaded()">
+    </ion-infinite-scroll>
+
+
+  </ion-content>
+</ion-view>
+

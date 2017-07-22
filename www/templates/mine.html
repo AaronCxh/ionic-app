@@ -1,0 +1,82 @@
+<ion-view style="background: #eeeeee;" class="animated fadeInLeft">
+  <!--<div class="buttons">-->
+    <!--<button class="button button-clear icon ion-ios-gear account-setting-btn pull-right"-->
+            <!--ng-click="$state.go('tab.settings')" ng-if="user.getUser().name"></button>-->
+  <!--</div>-->
+  <div class="avatar-section">
+    <!-- 用户登录显示 -->
+    <div ng-if="user.getUser().nickname">
+      <a class="logo" ng-click="$state.go('tab.profile')"
+         style="background: url({{user.getUser().imagebg}}) center no-repeat; background-size: cover">
+      </a>
+      <div class="avatar-wrap">
+        <p><img class="avatar" ng-src="{{user.getUser().image}}" alt=""></p>
+        <p ng-if="user.getUser().nickname" class="user">{{user.getUser().nickname}}</p>
+      </div>
+
+    </div>
+
+    <div ng-click="openSignInModal()" ng-if="!user.getUser().nickname">
+      <a
+        class="logo"
+        style="background: url(img/bonus_sellwin_password_pic.png) center no-repeat ; background-size: cover">
+      </a>
+      <div class="avatar-wrap">
+        <p><img src="img/mine.png" alt=""></p>
+        <p ng-if="!user.getUser().nickname" class="login-btn">登陆</p>
+      </div>
+    </div>
+
+  </div>
+
+  <ion-content class="account-view" style="top:250px">
+    <ion-list>
+      <div class="button-bar bar-light icon-top">
+        <button class="button button-icon" ng-click="$state.go('tab.cart')">
+          <i class="icon ion-card"></i>
+          待支付
+        </button>
+        <button class="button button-icon" ng-click="$state.go('tab.orders')">
+          <i class="icon " style="margin: 5px auto;;background:url(img/take.png) no-repeat center; background-size:30px; height: 30px;
+        width: 50px;"></i>
+          待收货
+        </button>
+        <button class="button button-icon" ng-click="$state.go('tab.coupons')">
+          <i class="icon ion-ios-compose-outline"></i>
+          待评价
+        </button>
+        <button class="button button-icon" ng-click="$state.go('tab.coupons')">
+          <i class="icon ion-ios-pricetags"></i>
+          退换/维修
+        </button>
+      </div>
+
+      <div class="item item-divider"></div>
+      <ion-item ng-click="feedback()">
+          我的资产
+      </ion-item>
+      <ion-item ng-click="feedback()">
+        会员俱乐部
+      </ion-item>
+      <div class="item item-divider"></div>
+      <ion-item ng-click="feedback()">
+         账号与安全
+      </ion-item>
+      <ion-item ng-click="feedback()">
+        意见反馈
+        <span class="item-note">
+          Email:13590101067@163.com
+        </span>
+      </ion-item>
+
+
+
+    </ion-list>
+
+    <button class="button button-assertive button-full" ng-click="logout()" ng-if="user.getUser().nickname">
+      <i class="icon fa-sign-out fa"></i>
+      退出登录
+    </button>
+
+  </ion-content>
+</ion-view>

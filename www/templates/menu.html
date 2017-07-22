@@ -1,0 +1,275 @@
+<ion-view>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="">
+      <form style="position: absolute;
+    z-index: 20; left:45px;">
+        <div class="bar bar-header item-input-inset">
+          <label class="item-input-wrapper" style="padding-right: 50px;">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="搜索商品">
+            <input type="submit" ng-click="searchItem(searchQuery)"
+                   style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+          </label>
+          <span class="cart-num">0</span>
+          <a href="#/cart" class="button button-icon icon ion-ios-cart"></a>
+        </div>
+      </form>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+
+
+
+      <ion-content class="has-header homepage" overflow-scroll="true">
+        <ion-slide-box delegate-handle="image-viewer" auto-play="true" slide-interval="2000" does-continue="true"
+          >
+          <ion-slide>
+            <img src="../img/Z.jpg" ng-click="redirectTo(banner)">
+          </ion-slide>
+          <ion-slide>
+            <img src="../img/Z.jpg" ng-click="redirectTo(banner)">
+          </ion-slide>
+          <ion-slide>
+            <img src="../img/Z.jpg" ng-click="redirectTo(banner)">
+          </ion-slide>
+        </ion-slide-box>
+
+        <div class="row intro-box">
+          <div class="col col-25">
+            <a href="#/categories">
+              <i class="icon category"></i>
+
+              <p>商品分类</p>
+            </a>
+
+          </div>
+          <div class="col col-25">
+            <a href="#/calculate">
+              <i class="icon calculate"></i>
+
+              <p>运费估算</p>
+            </a>
+          </div>
+          <div class="col col-25">
+            <a href="#/express">
+              <i class="icon send"></i>
+
+              <p>待寄出国</p>
+            </a>
+
+          </div>
+          <div class="col col-25">
+            <a href="#/limit">
+              <i class="icon limit"></i>
+
+              <p>邮寄限制</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row intro-box">
+          <div class="col col-25">
+            <a href="#/categories">
+              <i class="icon category"></i>
+
+              <p>商品分类</p>
+            </a>
+
+          </div>
+          <div class="col col-25">
+            <a href="#/calculate">
+              <i class="icon calculate"></i>
+
+              <p>运费估算</p>
+            </a>
+          </div>
+          <div class="col col-25">
+            <a href="#/express">
+              <i class="icon send"></i>
+
+              <p>待寄出国</p>
+            </a>
+
+          </div>
+          <div class="col col-25">
+            <a href="#/limit">
+              <i class="icon limit"></i>
+
+              <p>邮寄限制</p>
+            </a>
+          </div>
+
+        </div>
+
+
+        <ion-item class="item" style="border-left: 3px solid #ea004f;">
+          每周精选
+        </ion-item>
+        <ion-refresher
+          pulling-text="下拉刷新..."
+          on-refresh="doRefresh()"
+          spinner="spiral">
+        </ion-refresher>
+
+        <div class="animated fadeIn">
+          <div class="row row-wrap">
+            <div class="col col-50 "
+                 style="display: inline-block"
+                 ng-click="goItem(1)"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+            <div class="col col-50 "
+                 style="display: inline-block"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+            <div class="col col-50 "
+                 style="display: inline-block"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+            <div class="col col-50 "
+                 style="display: inline-block"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+            <div class="col col-50 "
+                 style="display: inline-block"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+            <div class="col col-50 "
+                 style="display: inline-block"
+              >
+              <div class="item item-image">
+                <img src="../img/image1.suning.jpg">
+              </div>
+              <div class="item item-text-wrap" href="#">
+                <h2 class="product-title" style="overflow: hidden;">博朗（BRAUN）CJ3000 电动 榨橙汁机 柳橙机</h2>
+
+                <p class="product-prices">
+                  <span class="curr-price">397.00</span>
+                  <del class="orig-price">450</del>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <!--<div class="item item-banner-image">-->
+          <!--<div class="tri"></div>-->
+          <!--<img ng-src="../img/Z.jpg" ng-click="goBoard(board.id)">-->
+          <!--</div>-->
+          <!--<item-carousel board="board"></item-carousel>-->
+          <!--<div class="item item-divider"></div>-->
+        </div>
+
+
+        <ion-infinite-scroll
+          on-infinite="loadMore()"
+          distance="1"
+          spinner='spiral'
+          ng-if="moreDataCanBeLoaded()">
+        </ion-infinite-scroll>
+
+
+      </ion-content>
+
+
+
+
+    <!--<div class="col col-50 "-->
+    <!--style="display: inline-block"-->
+    <!--ng-repeat="item in items track by $index" ng-click="goItem(item.item_id)">-->
+    <!--<div class="item item-image">-->
+    <!--<img ng-src="{{::item.thumbnail}}">-->
+    <!--</div>-->
+    <!--<div class="item item-text-wrap" href="#">-->
+    <!--<h2 class="product-title" style="overflow: hidden;">{{::item.title}}</h2>-->
+
+    <!--<p class="product-prices">-->
+    <!--<span class="curr-price">{{::item.price | currency}}</span>-->
+    <!--<del class="orig-price">{{::item.orig_price | currency}}</del>-->
+    <!--</p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="">
+      <h1 class="title">商品分类</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+          食品
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          家居
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+          服饰
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          数码
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+</ion-view>
