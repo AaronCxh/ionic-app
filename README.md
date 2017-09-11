@@ -4,5 +4,5 @@
 
 
    地址:
-        chenxiaohong.applinzi.com
+        http://chenxiaohong.applinzi.com
 
