@@ -1,8 +1,7 @@
 
-# ionic-app
 
 
 
-   地址:
-        http://chenxiaohong.applinzi.com
+   地址:http://chenxiaohong.applinzi.com
+   
 
